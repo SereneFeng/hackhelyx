@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eco_drive</title>
+    <link rel="stylesheet" hred="https.//fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+    <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous"
+  />
+
+<style>
+    html, body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        margin: 0;
+        min-height: 180px;
+        padding: 0;
+        width: 500px;
+    }
+
+    h1{
+			background: rgba(0, 153, 0, 0.8);
+        font-family: 'Menlo', monospace;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+        color: rgb(0, 0, 0);
+    }
+
+		h2{
+			background: rgba(204, 255, 153, 0.4);
+        font-family: 'Menlo', monospace;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+        color: rgb(0, 0, 0);
+    }
+
+			h3{
+			background: rgba(204, 255, 153, 0.4);
+        font-family: 'Menlo', monospace;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+        color: rgb(0, 0, 0);
+    }
+    
+    a:link,
+      a:visited {
+        color: #000000;
+        outline: 0;
+        text-decoration: none;
+      }
+
+      img {
+        width: 30px;
+      }
+
+      .modal-header {
+        align-items: center;
+        border-bottom: 0.5px solid #dadada;
+      }
+
+      .modal-content {
+				font-family: 'Menlo', monospace;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+        padding: 0 22px;
+				background: rgba(204, 255, 153, 0.4);
+      }
+
+      .modal-icons {
+        border-top: 0.5px solid #dadada;
+        height: 50px;
+        width: 100%;
+      }
+
+      .logo {
+          padding:16px;
+      }
+      
+      .logo-icon {
+        vertical-align: text-bottom;
+        margin-right: 12px;
+      }
+
+      .version {
+        color: #444;
+        font-size: 18px;
+      }
+
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 22px;
+      }
+
+      .flex {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+        width: 120px;
+      }
+
+      .flex:hover {
+        opacity: 0.4;
+      }
+
+      .flex .fa {
+        font-size: 40px;
+        color: #2f5876;
+      }
+
+</style>
+
+
+</head>
+  <body>
+    <form id="gasCostForm"></form>
+    <div class="modal-header">
+        <h1 class="logo">
+            <img src="images/logo.png" alt="Eco-drive" class="logo-icon"> Eco_drive
+           <span class="version">(1.0.0)</span> 
+       </h1>    
+    </div>
+    <div class="modal-content">
+     <img src="new500infographic.png" alt="Eco_drive" style="width:470px;height:650px;">
+
+           
+            <br></br> 
+            <ul style="list-style-type:square;">
+            <li>Ford F-150 -- 18 MPG </li>
+            <li>Chevrolet Silverado -- 14 MPG </li>
+            <li>Ram 1500 -- 16 MPG </li>
+            <li>Toyota RAV4 --26 MPG </li>
+            <li>Honda CR-V -- 25 MPG </li>
+            <li>Honda Civic -- 30 MPG</li>
+            <li>Chevrolet Equinox -- 22 MPG</li>
+            <li>Toyota Camry -- 28 MPG</li>
+            <li>Honda Accord --28 MPG  </li>
+            <li>Toyota Corolla -- 35 MPG</li>
+            
+          <br></br>
+
+           Please enter values below using Google Maps.
+           <h2>Distance in miles: </h2> <input type="number" id="firstValue">
+           <br></br>
+          <h2> Your car's MPG (Miles per Gallon--different for each model of car, but use our simplified version to do a quick estimate):</h2><input type="number" id="secondValue">
+         <br></br>
+        <h3> The Gasoline Cost (in US$): </h3>
+           <p id="result">Gasoline Cost</p>
+           <h3> The CO2 Emissions (in kilograms): </h3>
+           <p id="carbonresult">CO2 Emissions</p> 
+           <br></br> 
+           <input type="button" id="calc" onclick="calculation()" value="click here to calculate">
+					 <img src="icon_128.png" alt="Eco_drive" style="width:128px;height:128px;">
+ <p>  Drive Wisely! 
+           (How the cost is calculated: distance multiplied by average price of gasoline ($3.00), divided by miles per gallon (MPG).
+           Estimated CO2 emissions from a gallon of gasoline: 8,887 grams CO2/gallon.) Click for EPA website source:
+           <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle">EPA Link</a>
+           </p>
+           
+<br></br>
+       
+    </div>
+    <div class="modal-icons">
+        <div class="flex-container">
+            <div class="flex">
+                <a href="https://twitter.com/intent/tweet?button_hashtag=EcoDrive&ref_src=twsrc%5Etfw" target="_blank">
+                <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a href="https://www.pinterest.com/pin/create/button/" target="_blank">
+                <i class="fa fa-pinterest"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" target="_blank">
+                <i class="fa fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="popup.js"></script>
+
+<div id="fb-root"></div>
+
+</body>
+</html>
+
+<!--<link href="style.css" rel="stylesheet" type="text/css" />>
+    <script src="script.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+
+         <script>
+    /*
+     * Function calculateCost( costForm_IN )
+     */
+    function calculateCost(costForm_IN) {
+        var cost_OUT = "";
+
+        // declare variables
+        var okayToCalc = true;
+        var mileage = -1;
+        var costOfGas = -1;
+        var costPerMile = -1;
+
+        // get values from form
+        costOfGas = costForm_IN.elements["price_of_gas"].value;
+        mileage = costForm_IN.elements["mpg"].value;
+
+        // check to see if we have values
+        if ((costOfGas == null) || (costOfGas == "")) {
+            okayToCalc = false;
+        }
+        if ((mileage == null) || (mileage == "")) {
+            okayToCalc = false;
+        }
+
+        if (okayToCalc == true) {
+            //make sure we aren't dividing by zero
+            if (mileage != 0) {
+                costPerMile = costOfGas / mileage;
+                cost_OUT = "$" + (Math.round(costPerMile * 100) / 100)
+            } else {
+                cost_OUT = "Please enter a mileage other than 0";
+            }
+        } else //-- need to put something in both fields --//
+        {
+            cost_OUT = "Please enter a value for both gas cost and mileage.";
+        }
+
+        // place the HTML we generate in the output div.
+        document.getElementById("costOfGas").innerHTML = cost_OUT;
+    }
+</script>
+<tr>
+              <td width="85%">How much do you pay for a gallon of gas? (ex. 3.09)</td>
+              <td width="15%"><input type="text" name="price_of_gas" size="10"></td>
+          </tr>
+          <tr>
+              <td width="85%">How many miles per gallon does your vehicle get? (ex. 21)</td>
+              <td width="15%"><input type="text" name="mpg" size="10"></td>
+          </tr>
+          <tr>
+              <td colspan="2" width="100%"><input type="button" value="Calculate Cost" onclick="calculateCost(this.form);"></td>
+          </tr>
+          <tr>
+            <td width="85%">Your per-mile cost of gas:</td>
+            <td width="15%">
+                <div id="costOfGas"></div>
+            </td>
+</tr>
